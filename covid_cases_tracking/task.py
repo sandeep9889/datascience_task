@@ -1,4 +1,5 @@
 
+from matplotlib import colors
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,7 +16,15 @@ who_time_series=DataFrame(df)
 
 france = who_time_series[who_time_series["Country"]== "France"]
 france_june = who_time_series[who_time_series["Date_reported"] == france["Date_reported"[5:7]]]
-plt.plot(france_june,france["Cumulative_cases"],label ="france")
+plt.plot(france_june,france["Cumulative_cases"],label ="france",color = "orange")
+
+
+itlay = who_time_series[who_time_series["Country"]== "Itlay"]
+itlay_june = who_time_series[who_time_series["Date_reported"] == itlay["Date_reported"[5:7]]]
+plt.plot(itlay_june,france["Cumulative_cases"],label ="france",color = "orange")
+
+
+
 plt.title("covid cases tracking ")
 plt.xlabel("dates of july")
 plt.ylabel("cases")
