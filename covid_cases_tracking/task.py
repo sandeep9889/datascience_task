@@ -7,6 +7,7 @@ import csv
 import re
 
 from pandas.core.frame import DataFrame
+from pandas.tseries.offsets import MonthBegin
 df =pd.read_csv('covid.csv')
 # f = open("covid.csv", "r" ,encoding="utf8")
 # df = list(csv.reader(f))
@@ -16,7 +17,15 @@ who_time_series=DataFrame(df)
 # print(who_time_series)
 
 france = who_time_series[who_time_series["Country"]== "France"]
-france_june = who_time_series[who_time_series["Date_reported"] == france["Date_reported"[5:7]]]
+# france_june = who_time_series[who_time_series["Date_reported"] == france["Date_reported"[5:7]]]
+france["Date_reported"]=pd.to_datetime(france["Date_reported"])
+Mon=france[france["Date_reported"].dt.month == 7]
+da=Mon[Mon["Date_reported"]]
+print(da[0: ,5:7])
+# print("da")
+
+# print(france["Date_reported"])
+
 plt.plot(france_june,france["Cumulative_cases"],label ="france",color = "orange")
 
 
@@ -37,7 +46,7 @@ plt.ylabel("cases")
 
 plt.legend()
 plt.show()
-#2019-07-01
+# 2019-07-01
 
-# print(france)
+print(france)
 
