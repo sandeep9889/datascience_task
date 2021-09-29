@@ -16,6 +16,11 @@ who_time_series=DataFrame(df)
 france = who_time_series[who_time_series["Country"]== "France"]
 france_june = who_time_series[who_time_series["Date_reported"] == france["Date_reported"[5:7]]]
 plt.plot(france_june,france["Cumulative_cases"],label ="france")
+plt.title("covid cases tracking ")
+plt.xlabel("dates of july")
+plt.ylabel("cases")
+
+plt.legend()
 plt.show()
 #2019-07-01
 
