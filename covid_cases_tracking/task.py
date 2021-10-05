@@ -26,7 +26,7 @@ print(da[0: ,5:7])
 
 # print(france["Date_reported"])
 
-plt.plot(france_june,france["Cumulative_cases"],label ="france",color = "orange")
+plt.plot(,france["Cumulative_cases"],label ="france",color = "orange")
 
 
 itlay = who_time_series[who_time_series["Country"]== "Itlay"]
