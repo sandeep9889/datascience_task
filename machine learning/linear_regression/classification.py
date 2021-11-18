@@ -11,8 +11,8 @@ print(features[0],label[0])
 
 
 # training the classifier 
-clf = KNeighborsClassifier   
+clf = KNeighborsClassifier()  
 clf.fit(features,label)
 
-preds =clf.predict([[1,1,1,1]])  #predict the elemnt that has be input [[1,1,1,1]]
+preds =clf.predict([[31,1,1,1]])  #predict the elemnt that has be input [[1,1,1,1]]
 print(preds)
